@@ -50,8 +50,14 @@ def test_start_pause_reset_widget(page: Page):
     expect(timer_widget).to_be_visible()
 
     # start button
-    add_note_button = page.get_by_role("button", name=re.compile("Start"))
-    add_note_button.click()
+    page.get_by_role("button", name="Start").click()
 
-    timer_widget = page.get_by_text("timer running")
-    expect(timer_widget).to_be_visible()
+    timer = page.get_by_text(re.compile(r"\d{2}:\d{2}"))
+    expect(timer).to_be_visible()
+
+    # pause button
+    expect(page.get_by_role("button", name="Pause")).to_be_visible()
+
+    # reset button
+    page.get_by_role("button", name="Reset").click()
+    expect(timer).to_have_text("15:00")
