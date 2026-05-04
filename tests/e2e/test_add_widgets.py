@@ -34,3 +34,4 @@ def test_add_widget(page: Page):
     first_widget.click()
     add_button = page.get_by_role("button").get_by_text(re.compile("Add timer"))
     add_button.click()
+    expect(add_button).to_be_visible()

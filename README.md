@@ -61,13 +61,13 @@ Acceptance Criteria:
 <br> Other widgets remain unaffected
 
 [A2] Swap widgets
-<br> User can drag and drop a widget to a new position
-<br> While dragging, other widgets adjust position dynamically 
-<br> User can drop the widget in a new location to complete the swap
-<br> The new order is immediately reflected in the UI
-<br> The updated order is saved and persists after refresh
-<br> Swapping works between all widget types
-<br> No data inside widgets is lost during reordering
+<br> User can move a widget up in the dashboard using an Arrow Up button.
+<br> Clicking Arrow Up swaps the selected widget with the widget directly above it.
+<br> The new order is immediately reflected in the dashboard UI.
+<br> Widgets maintain their data/content after swapping.
+<br> If the widget is already at the top position, the Arrow Up button is disabled or has no effect.
+<br> Only the selected widget and the one above it are affected—other widgets remain unchanged.
+
 
 [A3] Change timer time setting
 <br> The user can access timer settings via a gear/settings icon
@@ -91,7 +91,7 @@ Acceptance Criteria:
 <br> The reset button is available in both running and paused states
 
 [A5] Change note text
-<br> The user can enter edit mode by selecting the note or clicking a pencil icon
+<br> The user can enter edit mode by clicking the text of the existing note
 <br> The current note text is displayed in an editable field
 <br> The user can modify the text of the note
 <br> The updated note is saved by pressing enter on keyboard
@@ -112,46 +112,58 @@ Acceptance Criteria:
 
 ## 1.3 Write down test scenarios for every acceptance criteria. (A scenario can cover multiple acceptance criteria.)
 [A1a] Create Add Timer/Note widget (Timer/Note)
-1. Add a Timer widget to the dashboard
-2. Add a Note widget to the dashboard
-2. Dashboard updates after adding a timer/note widget
+1. Navigate to dashboard
+2. Click Add Timer button to add timer widget to the dashboard
+3. Click Note button to add note widget to the dashboard
+4. Dashboard updates after adding a timer/note widget
 
 [A1b] Delete widget (Timer/Note)
-1. Delete a Timer widget from the dashboard
-2. Delete a Note widget from the dashboard
-3. Cancel selected widget from the dashboard
+1. Navigate to dashboard
+2. Identify an existing widget to delete
+3. Click the bin icon on the widget to delete
+4. See that deleted widget is removed from dashboard
 
 [A2] Swap widgets
-1. Swap widget positions using drag and drop
-2. Dynamic rearrangement of widgets during dragging
-3. Updated widget order is saved and persists after refresh
-4. Swap works across different widget types
-5. Widget data is preserved during swapping
+1. Navigate to dashboard
+2. Verify behavior when only one widget exists, Arrow Up has no effect 
+3. Add at least two widgets to the dashboard
+4. Click the Arrow Up button on a widget that is not in the top position
+5. Observe the widget position change
 
 [A3] Change timer time setting
-1. Access and edit timer settings
-2. Validate timer input values
-3. Updated timer duration is saved and applied
-4. Timer starts or resets using the updated duration
+1. Navigate to dashboard
+2. Click the gear/settings icon
+3. Edit the timer duration using valid numeric values (minutes and/or seconds)
+4. Click the counting down control to update the timer
+5. Timer updates to the new timer duration even if it is currently running
 
 [A4] Start, pause, reset
-1. Start timer from set duration
-2. Pause and resume timer
-3. Reset timer to last set duration
-4. Prevent invalid timer actions based on state
+1. User is on the dashboard
+2. Add timer if none exists
+3. Click on Start button
+4. Verify timer is running
+5. Click the Pause button
+6. Click start/resume button to resume timer to continue the timer from the paused time.
+7. Click on reset button to reset to the last configured duration
 
 [A5] Change note text
-1. Enter edit mode for a note
-2. Edit and save note text using enter key
-3. Cancel note editing
-4. Allow saving a blank note
+1. Navigate to dashboard
+2. Locate an existing note widget
+3. Click on the note text
+4. Modify note text
+5. Save updated note using Enter key
+6. Updated text replaces old note content
+7. Changes are reflected immediately
+8. Allow blank note entry
 
 [A6] Change theme color
-1. Access and select a theme color
-2. Apply theme color instantly across UI 
-3. Persist selected theme color after refresh
-4. Change theme color multiple times
-
+1. Navigate to the dashboard
+2. Select a theme color
+3. Immediate background update after selection
+4. Selected theme color is highlighted
+5. Theme persists after refresh
+6. Change theme multiple times
+7. No performance delay during theme switch
 
 ## 1.4 Implement E2E testing in Playwright for selected scenarios. Do as many as you can.
 Code review! If you divide the work: make sure to come back together and show the code you have written.
