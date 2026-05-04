@@ -11,12 +11,24 @@ Acceptance Criteria:
     3. Newly created widget is now added to the dashboard
     4. Dashboard is now updated with the rest of the existing widgets
 
+[A1b] Delete widget
+    1. User can click on bin button
+    2. Deleted widget is removed from the dashboard
+    3. Other widgets remain unaffected
+
 Test Scenarios
 [A1a] Create Add Timer/Note widget (Timer/Note)
     1. Navigate to dashboard
     2. Click Add Timer button to add timer widget to the dashboard
     3. Click Note button to add note widget to the dashboard
     4. Dashboard updates after adding a timer/note widget
+
+[A1b] Delete widget (Timer/Note)
+    1. Navigate to dashboard
+    2. Identify an existing widget to delete
+    3. Click the bin icon on the widget to delete
+    4. See that deleted widget is removed from dashboard
+
 
 """
 
