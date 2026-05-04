@@ -16,7 +16,7 @@ Acceptance Criteria:
     2. Deleted widget is removed from the dashboard
     3. Other widgets remain unaffected
 
-Test Scenarios
+Test Scenarios:
 [A1a] Create Add Timer/Note widget (Timer/Note)
     1. Navigate to dashboard
     2. Click Add Timer button to add timer widget to the dashboard
